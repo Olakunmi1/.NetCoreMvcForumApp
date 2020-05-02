@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForumApp", "ForumApp.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forum.Data", "..\Forum.Data\Forum.Data.csproj", "{1D9D80F9-6E31-446C-BAC0-C4016B533FA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumService", "..\ForumService\ForumService.csproj", "{570D6CD4-B120-42D0-B9F4-F291A761F3AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1D9D80F9-6E31-446C-BAC0-C4016B533FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D9D80F9-6E31-446C-BAC0-C4016B533FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D9D80F9-6E31-446C-BAC0-C4016B533FA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570D6CD4-B120-42D0-B9F4-F291A761F3AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570D6CD4-B120-42D0-B9F4-F291A761F3AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570D6CD4-B120-42D0-B9F4-F291A761F3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570D6CD4-B120-42D0-B9F4-F291A761F3AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
