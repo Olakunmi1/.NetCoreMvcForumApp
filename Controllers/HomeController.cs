@@ -13,6 +13,7 @@ namespace ForumApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        //Injecting Ilogger services
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
