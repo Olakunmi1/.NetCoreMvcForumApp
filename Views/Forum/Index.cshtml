@@ -16,14 +16,18 @@
     <tbody>
         @foreach (var forum in @Model.ListOfForums)
         {
-            <tr class="assetRow">
-                <td class="">
-                   @forum.Title
-                </td>
-                <td class="">
-                   @forum.Description
-                </td>
-            </tr>
+        <tr class="assetRow">
+
+            <td class="">
+                <a asp-controller="Forum" asp-action="Topic" asp-route-Id="@forum.Id">
+                    @forum.Title
+                </a>
+            </td>
+
+            <td class="">
+                @forum.Description
+            </td>
+        </tr>
         }
     </tbody>
 
