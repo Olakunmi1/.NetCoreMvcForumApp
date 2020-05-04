@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Forum.Data.Interface;
+using Forum.Data.Model;
 using ForumApp.ViewModels.Forum;
+using ForumApp.ViewModels.Posts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ForumApp.Controllers
@@ -42,12 +44,47 @@ namespace ForumApp.Controllers
         {
             var forum = _forumService.GetForumById(id);
 
-            var posts = _PostService.GetFilteredPosts("");
+            var posts = forum.Posts;
 
-            var PostListings = "";
+           // var posts = _PostService.GetPostsByForum(id);
 
-            return View();
+            var PostListings = posts.Select(post => new PostListingModel
+            {
+
+                Id = post.Id,
+                AuthorId = post.User.Id,
+                AuthorRating = post.User.Rating,
+                Title = post.Title,
+                DatePosted = post.Created.ToString(),
+                RepliesCount = post.Replies.Count(),
+                Forum = BuildForumListing(post)
+            });
+
+            var model = new ForumTopicModel
+            {
+                Posts = PostListings,
+                Forum = BuildForumListing(forum)
+            };
+
+            return View(model);
         }
 
+        private ForumListingModel BuildForumListing(Post post)
+        {
+            var forum = post.Forum;
+
+            return BuildForumListing(forum);
+        }
+
+        private ForumListingModel BuildForumListing(Forumm forum)
+        {
+            return new ForumListingModel
+            {
+                Id = forum.Id,
+                Title = forum.Title,
+                Description = forum.Description,
+                ImageUrl = forum.ImageUrl
+            };
+        }
     }
 }

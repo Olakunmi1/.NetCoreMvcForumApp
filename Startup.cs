@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Forum.Data.Interface;
 using ForumService;
 using Forum.Data.Model;
+using Forum.Service;
 
 namespace ForumApp
 {
@@ -31,6 +32,7 @@ namespace ForumApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IForum, ForumServices>();
+            services.AddScoped<IPost, PostService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
